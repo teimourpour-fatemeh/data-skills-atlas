@@ -5,7 +5,13 @@
   const I18N = {
     fa: {
       theme: 'تیره / روشن', brand: 'اطلس مهارت‌های داده', nav_profile: 'پروفایل نقش', nav_compare: 'مقایسه نقش‌ها', nav_lookup: 'جستجوی مهارت',
-      nav_esco: 'ESCO', nav_method: 'روش کار',
+      nav_esco: 'ESCO', nav_method: 'روش کار', nav_courses: 'دوره‌ها و بازار',
+      h_courses: 'دوره‌های مؤسسه توسعه در برابر نیاز بازار',
+      s_courses: 'سرفصل عمومی هر دوره روی همین دسته‌بندی مهارت‌ها نگاشت شده و با ۲۰ مهارت تخصصی و ابزارِ پرتقاضای نقش متناظر مقایسه شده است.',
+      h_low: 'در سرفصل هست، ولی کمتر خواسته می‌شود', s_low: 'مهارت‌هایی که دوره درس می‌دهد و کمتر از ۵٪ آگهی‌های این نقش خواسته‌اند.',
+      courses_note: 'توجه: فقط سرفصل منتشرشده در سایت مؤسسه بررسی شده است. نبودن یک مهارت در سرفصل عمومی لزوماً به این معنا نیست که در کلاس تدریس نمی‌شود.',
+      cov_lab: 'پوشش وزن‌دار تقاضا', cov_of: (k) => `${fmtInt(k)} از ۲۰ مهارت پرتقاضا`,
+      covered: 'در سرفصل', notcovered: 'در سرفصل نیست', course_link: 'صفحه دوره', sparse: 'سرفصل عمومی این دوره فقط چند خط کلی است؛ این مقایسه تقریبی است.', none_low: '—',
       title: 'کارفرمایان ایرانی از نقش‌های داده چه می‌خواهند؟',
       lede: 'تحلیل محتوای آگهی‌های استخدام پنج نقش داده‌محور در ایران، بهار ۱۴۰۴. هر آگهی برای مهارت‌های نرم، ویژگی‌های رفتاری، مهارت‌های تخصصی و ابزارها کدگذاری شده است.',
       ctl_sample: 'نمونه', h_profile: 'پروفایل نقش',
@@ -34,7 +40,13 @@
     },
     en: {
       theme: 'Dark / light', brand: 'Data Skills Atlas', nav_profile: 'Role profile', nav_compare: 'Compare roles', nav_lookup: 'Skill lookup',
-      nav_esco: 'ESCO', nav_method: 'Method',
+      nav_esco: 'ESCO', nav_method: 'Method', nav_courses: 'Courses vs market',
+      h_courses: 'Tose’e Institute courses vs market demand',
+      s_courses: 'Each course’s public syllabus is mapped onto the same skill taxonomy and compared with the 20 most-requested specialist skills and tools of the matching role.',
+      h_low: 'Taught, but rarely asked for', s_low: 'Skills the course teaches that fewer than 5% of this role’s ads ask for.',
+      courses_note: 'Note: only the syllabus published on the institute’s website was reviewed. A skill missing from the public syllabus may still be taught in class.',
+      cov_lab: 'Weighted demand coverage', cov_of: (k) => `${fmtInt(k)} of the top 20 skills`,
+      covered: 'in syllabus', notcovered: 'not in syllabus', course_link: 'Course page', sparse: 'This course’s public syllabus is only a few general lines; treat this comparison as rough.', none_low: '—',
       title: 'What do Iranian employers ask of data roles?',
       lede: 'A content analysis of job ads for five data-driven roles in Iran, spring 2025 (1404). Every ad was coded for soft skills, behavioural traits, specialist skills and tools.',
       ctl_sample: 'Sample', h_profile: 'Role profile',
@@ -70,6 +82,8 @@
       <p>یک سایت آگهی‌های منقضی سال‌های قبل را هم نگه داشته بود. این آگهی‌ها جدا علامت خورده‌اند و فقط با گزینهٔ «همه» نمایش داده می‌شوند؛ چون از یک سایت‌اند، نمونهٔ معرف آن سال‌ها نیستند.</p>
       <h3>کدگذاری و دسته‌بندی</h3>
       <p>هر آگهی برای مهارت‌های نرم، ویژگی‌های رفتاری، مهارت‌های تخصصی و ابزارها کدگذاری شد (با کمک هوش مصنوعی). سپس نام‌های گوناگون یکدست شدند (مثلاً «Excel»، «Microsoft Excel» و «اکسل پیشرفته») و یک دسته‌بندی مشترک برای همهٔ نقش‌ها ساخته شد: ۴۴ مهارت انسانی، ۷۸ مهارت تخصصی و ۱۳۶ ابزار. یکدست‌سازی با قاعده انجام و با نمونه‌گیری تصادفی بررسی شده است.</p>
+      <h3>دوره‌ها</h3>
+      <p>سرفصل منتشرشدهٔ پنج دورهٔ مؤسسه توسعه (آبان ۱۴۰۵) با همان قاعده‌ها روی دسته‌بندی مهارت‌ها نگاشت شد و چند خطای نگاشت دستی اصلاح شد. «پوشش وزن‌دار» یعنی چه سهمی از تقاضای ۲۰ مهارت تخصصی و ابزارِ پرتقاضای آن نقش در سرفصل دیده می‌شود.</p>
       <h3>شاخص</h3>
       <p>همهٔ درصدها «سهم آگهی‌هایی است که دست‌کم یک بار آن مهارت را خواسته‌اند». یک آگهی می‌تواند چند مهارت بخواهد، پس جمع درصدها ۱۰۰ نمی‌شود.</p>
       <h3>محدودیت‌ها</h3>
@@ -85,6 +99,8 @@
       <p>One site also kept expired ads from earlier years online. These are flagged separately and shown only under “All”; because they come from a single site they are not a representative sample of those years.</p>
       <h3>Coding and taxonomy</h3>
       <p>Each ad was coded, with AI assistance, for soft skills, behavioural traits, specialist skills and tools. Variant names were then merged (e.g. “Excel”, “Microsoft Excel”, “advanced Excel”) into one shared taxonomy across roles: 44 human skills, 78 specialist skills and 136 tools. Canonicalisation is rule-based and was checked on random samples.</p>
+      <h3>Courses</h3>
+      <p>The published syllabi of five Tose’e Institute courses (retrieved November 2026) were mapped onto the taxonomy with the same rules, with a few mapping errors corrected by hand. “Weighted coverage” is the share of demand for the role’s 20 most-requested specialist skills and tools that appears in the syllabus.</p>
       <h3>Measure</h3>
       <p>Every percentage is the share of ads that ask for the skill at least once. An ad can ask for many skills, so percentages do not add up to 100.</p>
       <h3>Limitations</h3>
@@ -269,6 +285,47 @@
     $('skill-select').addEventListener('change', (e) => { state.lookup = e.target.value; renderLookup(); });
   }
 
+  function renderCourses() {
+    const CS = D.courses || [];
+    if (!state.course) state.course = 'bi';
+    const host = $('course-summary');
+    host.innerHTML = '';
+    CS.forEach((c) => {
+      const b = document.createElement('button');
+      b.type = 'button'; b.className = 'cs'; b.setAttribute('aria-pressed', String(c.id === state.course));
+      b.innerHTML = `<div class="r">${esc(roleName(c.role))}</div><div class="v">${fmtPct(c.coverage_weighted)}</div>
+        <div class="m"><i style="inline-size:${c.coverage_weighted}%"></i></div><div class="s">${esc(t('cov_of', c.coverage_count))}</div>`;
+      b.addEventListener('click', () => { state.course = c.id; renderCourses(); });
+      host.appendChild(b);
+    });
+    const c = CS.find((x) => x.id === state.course);
+    if (!c) return;
+    $('course-title').textContent = state.lang === 'fa' ? c.fa : c.en;
+    $('course-meta').innerHTML = `${esc(roleName(c.role))} · <a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(t('course_link'))}</a>`;
+    $('course-kpi').textContent = fmtPct(c.coverage_weighted);
+    $('course-kpi-lab').textContent = t('cov_lab');
+    const w = $('course-warn');
+    if (c.sparse) { w.hidden = false; w.textContent = t('sparse'); } else w.hidden = true;
+    const n = D.main.n[c.role];
+    const box = $('course-bars');
+    box.innerHTML = '';
+    const wrap = document.createElement('div'); wrap.className = 'bars';
+    c.top20.forEach((it) => {
+      const x = BYID[it.id]; const pct = (100 * it.k) / n;
+      const row = document.createElement('div');
+      row.className = 'bar-row ' + (it.covered ? 'cov' : 'gap');
+      row.innerHTML = `<span class="bar-label">${esc(name(x))}<span class="mark">${it.covered ? '✓ ' + esc(t('covered')) : '— ' + esc(t('notcovered'))}</span></span>
+        <div class="bar-track"><div class="bar-fill" style="inline-size:${pct}%"></div></div><span class="bar-val">${fmtPct(pct)}</span>`;
+      bindTip(row, `<b>${esc(name(x))}</b><br>${fmtPct(pct)} · ${t('tip_ads', it.k, n)}<br>${esc(it.covered ? t('covered') : t('notcovered'))}`);
+      wrap.appendChild(row);
+    });
+    box.appendChild(wrap);
+    $('course-legend').innerHTML = `<span><i style="background:var(--bar)"></i>${esc(t('covered'))}</span><span><i class="gap"></i>${esc(t('notcovered'))}</span>`;
+    $('course-low').innerHTML = c.taught_low_demand.length
+      ? c.taught_low_demand.map((z) => `<span class="chip-s">${esc(name(BYID[z.id]))} · ${fmtPct((100 * z.k) / n)}</span>`).join('')
+      : `<span class="chip-s">${esc(t('none_low'))}</span>`;
+  }
+
   function renderEsco() {
     const M = ['exact', 'close', 'broad', 'none'];
     const host = $('esco-bars');
@@ -311,7 +368,7 @@
   }
 
   function renderAll() {
-    applyStatic(); renderHero(); renderControls(); renderProfile(); renderCompare(); renderLookup(); renderEsco();
+    applyStatic(); renderHero(); renderControls(); renderProfile(); renderCompare(); renderLookup(); renderCourses(); renderEsco();
   }
 
   function initTheme() {
