@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>اطلس مهارت‌های داده | Data Skills Atlas</title>
+<meta name="description" content="کارفرمایان ایرانی از نقش‌های داده چه می‌خواهند؟ تحلیل محتوای آگهی‌های استخدام ۱۴۰۴.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="viz-root">
+<header class="site-header">
+  <div class="wrap header-row">
+    <div class="brand" data-i18n="brand">اطلس مهارت‌های داده</div>
+    <nav class="toc">
+      <a href="#profile" data-i18n="nav_profile">پروفایل نقش</a>
+      <a href="#compare" data-i18n="nav_compare">مقایسه نقش‌ها</a>
+      <a href="#lookup" data-i18n="nav_lookup">جستجوی مهارت</a>
+      <a href="#esco" data-i18n="nav_esco">ESCO</a>
+      <a href="#method" data-i18n="nav_method">روش کار</a>
+    </nav>
+    <div class="header-tools">
+      <button id="theme-btn" class="chip" type="button" data-i18n="theme">تیره / روشن</button>
+      <button id="lang-btn" class="chip" type="button">English</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1 data-i18n="title">کارفرمایان ایرانی از نقش‌های داده چه می‌خواهند؟</h1>
+    <p class="lede" data-i18n="lede">تحلیل محتوای آگهی‌های استخدام پنج نقش داده‌محور در ایران، بهار ۱۴۰۴. هر آگهی برای مهارت‌های نرم، ویژگی‌های رفتاری، مهارت‌های تخصصی و ابزارها کدگذاری شده است.</p>
+    <div class="stats" id="hero-stats"></div>
+  </section>
+
+  <div class="controls" role="group">
+    <div class="control">
+      <span class="control-label" data-i18n="ctl_sample">نمونه</span>
+      <div class="seg" id="sample-seg"></div>
+    </div>
+    <p class="control-note" id="sample-note"></p>
+  </div>
+
+  <section id="profile" class="block">
+    <h2 data-i18n="h_profile">پروفایل نقش</h2>
+    <p class="sub" data-i18n="s_profile">درصد آگهی‌های هر نقش که هر مهارت را خواسته‌اند. ده مورد اول هر دسته.</p>
+    <div class="seg role-seg" id="role-seg"></div>
+    <p class="warn" id="small-n" hidden></p>
+    <div class="grid3">
+      <div class="card"><h3 data-i18n="t_human">مهارت‌های انسانی</h3><p class="card-sub" data-i18n="t_human_sub">نرم و رفتاری</p><div id="bars-human"></div></div>
+      <div class="card"><h3 data-i18n="t_hard">مهارت‌های تخصصی</h3><p class="card-sub" data-i18n="t_hard_sub">دانش و توانایی فنی یا حرفه‌ای</p><div id="bars-hard"></div></div>
+      <div class="card"><h3 data-i18n="t_tool">ابزارها</h3><p class="card-sub" data-i18n="t_tool_sub">نرم‌افزار، زبان و پلتفرم</p><div id="bars-tool"></div></div>
+    </div>
+    <h3 class="minor" data-i18n="h_context">شرایط شغل</h3>
+    <div class="grid3">
+      <div class="card"><h4 data-i18n="c_work">مدل کاری</h4><div id="ctx-work"></div></div>
+      <div class="card"><h4 data-i18n="c_exp">حداقل سابقه</h4><div id="ctx-exp"></div></div>
+      <div class="card"><h4 data-i18n="c_size">اندازه شرکت</h4><div id="ctx-size"></div></div>
+    </div>
+  </section>
+
+  <section id="compare" class="block">
+    <h2 data-i18n="h_compare">مقایسه نقش‌ها</h2>
+    <p class="sub" data-i18n="s_compare">هر خانه: درصد آگهی‌های آن نقش که دست‌کم یک مهارت از این دسته خواسته‌اند. رنگ پررنگ‌تر یعنی درصد بیشتر.</p>
+    <div class="seg" id="type-seg"></div>
+    <div class="heat-wrap"><table class="heat" id="heat"></table></div>
+  </section>
+
+  <section id="lookup" class="block">
+    <h2 data-i18n="h_lookup">جستجوی مهارت</h2>
+    <p class="sub" data-i18n="s_lookup">یک مهارت یا ابزار را انتخاب کن تا ببینی هر نقش چقدر آن را می‌خواهد.</p>
+    <div class="lookup-row">
+      <select id="skill-select" class="input" aria-label="skill"></select>
+    </div>
+    <div class="card" id="lookup-card">
+      <div class="lookup-head"><h3 id="lookup-title"></h3><p class="card-sub" id="lookup-meta"></p></div>
+      <div id="bars-lookup"></div>
+    </div>
+  </section>
+
+  <section id="esco" class="block">
+    <h2 data-i18n="h_esco">شکاف با طبقه‌بندی اروپایی ESCO</h2>
+    <p class="sub" data-i18n="s_esco">هر مهارت تخصصی و ابزار به نزدیک‌ترین مفهوم در ESCO (نسخه ۱.۲) وصل شده است. «یکسان» یعنی همان مفهوم؛ «کلی‌تر» یعنی ESCO فقط یک مفهوم عام‌تر دارد.</p>
+    <div class="card">
+      <div id="esco-bars"></div>
+      <div class="legend" id="esco-legend"></div>
+    </div>
+    <h3 class="minor" data-i18n="h_esco_gap">پرتقاضاترین ابزارهایی که ESCO معادل دقیقشان را ندارد</h3>
+    <div class="card"><div id="esco-gap"></div></div>
+  </section>
+
+  <section id="method" class="block method">
+    <h2 data-i18n="h_method">روش کار و محدودیت‌ها</h2>
+    <div id="method-body"></div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap" id="footer"></div>
+</footer>
+<div id="tip" class="tip" role="tooltip" hidden></div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
