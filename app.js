@@ -4,6 +4,27 @@
 
   const I18N = {
     fa: {
+      nav_trends: 'روند زمانی', h_trends: 'تغییر تقاضا در طول زمان',
+      s_trends: 'مقایسهٔ آگهی‌های منقضیِ نگه‌داشته‌شده در یک سایت (۱۳۹۸ تا ۱۴۰۳) با نمونهٔ اصلی ۱۴۰۴، برای تحلیلگر داده و هوش تجاری. این بخش اکتشافی است.',
+      h_change: 'بیشترین رشد و افت', s_change: 'تغییر سهم آگهی‌ها از ۱۳۹۸–۱۴۰۱ تا ۱۴۰۴، به واحد درصد. خط کنار هر نقطه بازهٔ اطمینان ۹۵٪ است. فقط مهارت‌هایی که دست‌کم در ۸ آگهی آمده‌اند.',
+      h_periods: 'سهم آگهی‌ها در سه دوره', s_periods: 'درصد آگهی‌های هر دوره که مهارت را خواسته‌اند. ۱۲ مهارتی که در دست‌کم یکی از دوره‌ها بیشترین سهم را داشته‌اند.',
+      h_intensity: 'میانگین تعداد مهارت در هر آگهی', s_intensity: 'آگهی‌های جدیدتر مهارت‌های انسانی بیشتری فهرست می‌کنند؛ بخشی از رشد مهارت‌های انسانی از همین طولانی‌تر شدن فهرست‌هاست.',
+      trend_table: 'جدول کامل همهٔ مهارت‌های آزموده‌شده', h_limits: 'پیش از خواندن نمودارها',
+      type_all: 'همه',
+      lim: [
+        ['داده از یک سایت است.', 'آگهی‌های ۱۳۹۸ تا ۱۴۰۳ همه از یک سایت کاریابی‌اند؛ تفاوت دوره‌ها ممکن است بازتاب قالب آگهی یا مخاطبان همان سایت باشد، نه کل بازار.'],
+        ['نمونه تصادفی نیست.', 'فقط آگهی‌هایی مانده‌اند که سایت نگه داشته؛ نمی‌دانیم کدام آگهی‌ها حذف شده‌اند.'],
+        ['تعداد آگهی کم است.', 'دورهٔ ۱۳۹۸–۱۴۰۱ برای هوش تجاری ۲۸ آگهی (فقط از ۱۴۰۰ و ۱۴۰۱) و برای تحلیلگر داده ۴۷ آگهی دارد. بازه‌های اطمینان پهن‌اند.'],
+        ['نتیجه اکتشافی است.', 'ده‌ها مهارت هم‌زمان آزموده شده‌اند؛ بعضی تغییرها تصادفی‌اند. فقط موارد ★ پس از اصلاح آزمون‌های چندگانه (بنیامینی–هاکبرگ، q کمتر از ۰٫۱) باقی می‌مانند.'],
+        ['نقش‌های دیگر', 'تحلیلگر مالی (۴۵، ۲۱ و ۳۱ آگهی و ابزارهای کم‌کدگذاری‌شده)، علم داده (۲۷ آگهی منقضی) و بازاریابی (بدون آگهی منقضی) نمایش داده نشده‌اند.'],
+      ],
+      ads_period: (n) => `${fmtInt(n)} آگهی`, small_period: 'کمتر از ۵۰ آگهی',
+      trend_small: (p, n) => `دورهٔ ${p} فقط ${fmtInt(n)} آگهی دارد؛ تفاوت‌های کوچک‌تر از حدود ۲۰ واحد درصد را نمی‌توان از تصادف جدا کرد.`,
+      pp: 'واحد درصد', ax_change: 'تغییر سهم آگهی‌ها (واحد درصد) · راست: کاهش، چپ: افزایش', ax_share: 'درصد آگهی‌ها',
+      lg_rise: 'افزایش', lg_fall: 'کاهش', lg_hollow: 'بازهٔ اطمینان صفر را در بر می‌گیرد (نامطمئن)', lg_star: '★ پس از اصلاح آزمون‌های چندگانه هم معنادار',
+      ci95: 'بازهٔ ۹۵٪', change: 'تغییر', of_ads: (k, n) => `${fmtInt(k)} از ${fmtInt(n)}`,
+      col_skill: 'مهارت', col_type: 'نوع', col_change: 'تغییر', col_ci: 'بازهٔ ۹۵٪ تغییر', col_q: 'q',
+      int_type: 'نوع مهارت',
       theme: 'تیره / روشن', brand: 'اطلس مهارت‌های داده', nav_profile: 'پروفایل نقش', nav_compare: 'مقایسه نقش‌ها', nav_lookup: 'جستجوی مهارت',
       nav_esco: 'ESCO', nav_method: 'روش کار', nav_courses: 'دوره‌ها و بازار',
       h_courses: 'دوره‌های مؤسسه توسعه در برابر نیاز بازار',
@@ -39,6 +60,27 @@
       footer: 'پژوهش و داده: فاطمه تیمورپور · داده‌ها در بهار ۱۴۰۴ برای گزارش تحلیلی مؤسسه توسعه، با مشاورهٔ علمی دکتر محمدمهدی پوربصیر، جمع‌آوری شد. · داده‌ها با مجوز CC BY 4.0 و کد با مجوز MIT؛ استفاده با ذکر منبع آزاد است. · طبقه‌بندی ESCO © اتحادیه اروپا.',
     },
     en: {
+      nav_trends: 'Over time', h_trends: 'How demand changed over time',
+      s_trends: 'Expired ads kept online by one site (2019–2025, 1398–1403 SH) compared with the 2025 main sample, for data analyst and business intelligence roles. This section is exploratory.',
+      h_change: 'Biggest rises and falls', s_change: 'Change in the share of ads from 1398–1401 (2019–22) to 1404 (2025), in percentage points. The line through each dot is its 95% confidence interval. Only skills that appear in at least 8 ads.',
+      h_periods: 'Share of ads in three periods', s_periods: 'Share of each period’s ads asking for the skill. The 12 skills with the highest share in at least one period.',
+      h_intensity: 'Average number of skills per ad', s_intensity: 'Newer ads list more human skills; part of the rise in human skills comes from longer lists.',
+      trend_table: 'Full table of every skill tested', h_limits: 'Before reading these charts',
+      type_all: 'All',
+      lim: [
+        ['One site only.', 'All 2019–2025 (1398–1403) ads come from one job site; differences between periods may reflect that site’s ad template or audience rather than the whole market.'],
+        ['Not a random sample.', 'Only ads the site kept online survive; we do not know which ads were removed.'],
+        ['Few ads.', 'The 1398–1401 (2019–22) period has 28 BI ads (only from 1400–1401) and 47 data-analyst ads. Confidence intervals are wide.'],
+        ['Exploratory.', 'Dozens of skills are tested at once, so some changes are chance. Only ★ items survive a multiple-testing correction (Benjamini–Hochberg, q < 0.1).'],
+        ['Other roles', 'Financial analyst (45, 21 and 31 ads, tools under-coded), data science (27 expired ads) and marketing (no expired ads) are not shown.'],
+      ],
+      ads_period: (n) => `${fmtInt(n)} ads`, small_period: 'fewer than 50 ads',
+      trend_small: (p, n) => `The ${p} period has only ${fmtInt(n)} ads; differences smaller than about 20 percentage points cannot be told apart from chance.`,
+      pp: 'pp', ax_change: 'Change in share of ads (percentage points) · ← fall | rise →', ax_share: 'Share of ads',
+      lg_rise: 'Rise', lg_fall: 'Fall', lg_hollow: 'Interval includes zero (uncertain)', lg_star: '★ also significant after multiple-testing correction',
+      ci95: '95% CI', change: 'Change', of_ads: (k, n) => `${fmtInt(k)} of ${fmtInt(n)}`,
+      col_skill: 'Skill', col_type: 'Type', col_change: 'Change', col_ci: '95% CI of change', col_q: 'q',
+      int_type: 'Skill type',
       theme: 'Dark / light', brand: 'Data Skills Atlas', nav_profile: 'Role profile', nav_compare: 'Compare roles', nav_lookup: 'Skill lookup',
       nav_esco: 'ESCO', nav_method: 'Method', nav_courses: 'Courses vs market',
       h_courses: 'Tose’e Institute courses vs market demand',
@@ -84,11 +126,13 @@
       <p>هر آگهی برای مهارت‌های نرم، ویژگی‌های رفتاری، مهارت‌های تخصصی و ابزارها کدگذاری شد (با کمک هوش مصنوعی). سپس نام‌های گوناگون یکدست شدند (مثلاً «Excel»، «Microsoft Excel» و «اکسل پیشرفته») و یک دسته‌بندی مشترک برای همهٔ نقش‌ها ساخته شد: ۴۴ مهارت انسانی، ۷۸ مهارت تخصصی و ۱۳۶ ابزار. یکدست‌سازی با قاعده انجام و با نمونه‌گیری تصادفی بررسی شده است.</p>
       <h3>دوره‌ها</h3>
       <p>سرفصل منتشرشدهٔ پنج دورهٔ مؤسسه توسعه (آبان ۱۴۰۵) با همان قاعده‌ها روی دسته‌بندی مهارت‌ها نگاشت شد و چند خطای نگاشت دستی اصلاح شد. «پوشش وزن‌دار» یعنی چه سهمی از تقاضای ۲۰ مهارت تخصصی و ابزارِ پرتقاضای آن نقش در سرفصل دیده می‌شود.</p>
+      <h3>تغییر در طول زمان</h3>
+      <p>آگهی‌های منقضی تحلیلگر داده و هوش تجاری بر اساس تاریخ انتشار به دو دوره تقسیم شدند (۱۳۹۸–۱۴۰۱ و ۱۴۰۲–۱۴۰۳) و با نمونهٔ اصلی ۱۴۰۴ مقایسه شدند. برای هر مهارت: سهم آگهی‌ها با بازهٔ اطمینان ویلسون، تفاوت ۱۴۰۴ با دورهٔ اول با بازهٔ نیوکامب، آزمون دقیق فیشر و اصلاح بنیامینی–هاکبرگ روی همهٔ مهارت‌های آزموده‌شدهٔ هر نقش. آگهی‌های بدون تاریخ کنار گذاشته شدند. تحلیلگر مالی بررسی شد ولی داده‌اش کافی نبود: ۴۵ آگهی در ۱۳۹۶–۱۴۰۰، ۲۱ آگهی در ۱۴۰۱–۱۴۰۲ و ۳۱ آگهی در ۱۴۰۴؛ و در دوره‌های قدیمی فقط ۱۲ و ۵ آگهی ابزاری کدگذاری‌شده داشتند.</p>
       <h3>شاخص</h3>
       <p>همهٔ درصدها «سهم آگهی‌هایی است که دست‌کم یک بار آن مهارت را خواسته‌اند». یک آگهی می‌تواند چند مهارت بخواهد، پس جمع درصدها ۱۰۰ نمی‌شود.</p>
       <h3>محدودیت‌ها</h3>
       <ul>
-        <li>داده یک برش زمانی است و روند را نشان نمی‌دهد.</li>
+        <li>نمونهٔ اصلی یک برش زمانی است. بخش «تغییر تقاضا در طول زمان» بر آگهی‌های منقضیِ یک سایت تکیه دارد و فقط اکتشافی است.</li>
         <li>نمونهٔ تحلیلگر مالی در بازهٔ اصلی کوچک است (۳۱ آگهی).</li>
         <li>آگهی بیان خواستهٔ کارفرماست، نه تصویر کامل شغل؛ و سطح تسلط در بیشتر آگهی‌ها گفته نشده است.</li>
         <li>اعتبارسنجی انسانیِ کدگذاری روی یک زیرنمونه هنوز در جریان است.</li>
@@ -101,11 +145,13 @@
       <p>Each ad was coded, with AI assistance, for soft skills, behavioural traits, specialist skills and tools. Variant names were then merged (e.g. “Excel”, “Microsoft Excel”, “advanced Excel”) into one shared taxonomy across roles: 44 human skills, 78 specialist skills and 136 tools. Canonicalisation is rule-based and was checked on random samples.</p>
       <h3>Courses</h3>
       <p>The published syllabi of five Tose’e Institute courses (retrieved November 2026) were mapped onto the taxonomy with the same rules, with a few mapping errors corrected by hand. “Weighted coverage” is the share of demand for the role’s 20 most-requested specialist skills and tools that appears in the syllabus.</p>
+      <h3>Change over time</h3>
+      <p>Expired data-analyst and BI ads were split by publication date into two periods (1398–1401 ≈ 2019–22 and 1402–1403 ≈ 2023–24) and compared with the 2025 (1404) main sample. For each skill: share of ads with a Wilson interval, the 2025-vs-first-period difference with a Newcombe interval, a Fisher exact test, and a Benjamini–Hochberg correction across all skills tested for the role. Undated ads were excluded. Financial analyst was examined but the data are too thin: 45 ads in 1396–1400, 21 in 1401–1402 and 31 in 1404, with only 12 and 5 ads in the older periods having any coded tool.</p>
       <h3>Measure</h3>
       <p>Every percentage is the share of ads that ask for the skill at least once. An ad can ask for many skills, so percentages do not add up to 100.</p>
       <h3>Limitations</h3>
       <ul>
-        <li>The data are a single cross-section and show no trends.</li>
+        <li>The main sample is a single cross-section. The “over time” section relies on expired ads from one site and is exploratory only.</li>
         <li>The financial analyst main sample is small (31 ads).</li>
         <li>Ads state what employers ask for, not the whole job; proficiency level is not stated in most ads.</li>
         <li>Human validation of the coding on a subsample is still in progress.</li>
@@ -326,6 +372,121 @@
       : `<span class="chip-s">${esc(t('none_low'))}</span>`;
   }
 
+  /* ---------- change over time ---------- */
+  const TYPES = ['human', 'hard', 'tool'];
+  function fmtPP(x) {
+    const v = Math.round(x);
+    const sgn = v > 0 ? '+' : v < 0 ? '−' : '';
+    const num = Math.abs(v).toLocaleString(state.lang === 'fa' ? 'fa-IR' : 'en-US');
+    return `⁦${sgn}${num}⁩`;
+  }
+  const perName = (p) => name(D.trends.periods.find((x) => x.id === p));
+
+  function trendTip(sk, n) {
+    const x = BYID[sk.id];
+    const lines = D.trends.periods.map((p) => `${esc(name(p))}: <b>${fmtPct((100 * sk.k[p.id]) / n[p.id])}</b> (${t('of_ads', sk.k[p.id], n[p.id])}) · ${esc(t('ci95'))} ${fmtPct(sk.ci[p.id][0])}–${fmtPct(sk.ci[p.id][1])}`);
+    return `<b>${esc(name(x))}</b>${sk.robust ? ' ★' : ''}<br>${lines.join('<br>')}<br>${esc(t('change'))}: <b>${fmtPP(sk.diff)}</b> ${esc(t('pp'))} · ${esc(t('ci95'))} ${fmtPP(sk.diff_ci[0])} … ${fmtPP(sk.diff_ci[1])} · q = ${sk.q}`;
+  }
+
+  function axisRow(ticks, pos, cap) {
+    const ax = document.createElement('div');
+    ax.className = 'axis';
+    ax.innerHTML = `<span></span><div class="ticks">${ticks.map((v) => `<span style="inset-inline-start:${pos(v)}%">${v.lab}</span>`).join('')}</div><span></span><div class="cap">${esc(cap)}</div>`;
+    return ax;
+  }
+
+  function renderTrends() {
+    const T = D.trends;
+    if (!T) return;
+    if (!state.trole) { state.trole = 'data_analyst'; state.ttype = 'all'; }
+    segButtons($('trend-role-seg'), Object.keys(T.roles).map((r) => [r, roleName(r)]), state.trole, (v) => { state.trole = v; renderTrends(); });
+    segButtons($('trend-type-seg'), [['all', t('type_all')], ...TYPES.map((x) => [x, t('type_' + x)])], state.ttype, (v) => { state.ttype = v; renderTrends(); });
+    document.querySelector('[data-i18n="s_trends"]').textContent = t('s_trends');
+    document.querySelector('[data-i18n="s_change"]').textContent = t('s_change');
+    document.querySelector('[data-i18n="s_periods"]').textContent = t('s_periods');
+    document.querySelector('[data-i18n="s_intensity"]').textContent = t('s_intensity');
+    $('trend-limits').innerHTML = t('lim').map(([h, b]) => `<li><b>${esc(h)}</b> ${esc(b)}</li>`).join('');
+
+    const R = T.roles[state.trole], n = R.n;
+    // period tiles
+    $('trend-periods').innerHTML = T.periods.map((p, i) => `<div class="per${n[p.id] < T.small_n ? ' small' : ''}">
+      <div class="r"><i class="dot-key" style="background:var(--per-${i + 1})"></i>${esc(name(p))}</div>
+      <div class="v">${esc(t('ads_period', n[p.id]))}</div>
+      <div class="s">${n[p.id] < T.small_n ? '⚠ ' + esc(t('small_period')) : '&nbsp;'}</div></div>`).join('');
+    const small = T.periods.filter((p) => n[p.id] < T.small_n);
+    const w = $('trend-small');
+    if (small.length) { w.hidden = false; w.textContent = '⚠ ' + small.map((p) => t('trend_small', name(p), n[p.id])).join(' '); } else w.hidden = true;
+
+    const pool = R.skills.filter((s) => state.ttype === 'all' || s.id.startsWith(state.ttype + '|'));
+
+    // A. change chart: top 8 rises + top 8 falls (by point estimate)
+    const ups = pool.filter((s) => s.diff > 0).slice(0, 8);
+    const downs = pool.filter((s) => s.diff < 0).slice(-8);
+    const rows = [...ups, ...downs];
+    const ext = Math.max(20, ...rows.flatMap((s) => s.diff_ci.map(Math.abs)));
+    const step = ext > 30 ? 20 : 10;
+    const lim = Math.ceil(ext / step) * step;
+    const pos = (v) => (100 * (v.v + lim)) / (2 * lim);
+    const ticks = [];
+    for (let v = -lim; v <= lim; v += step) ticks.push({ v, lab: v === 0 ? fmtInt(0) : fmtPP(v) });
+    const box = $('trend-change');
+    box.innerHTML = '';
+    rows.forEach((sk) => {
+      const x = BYID[sk.id];
+      const hue = sk.diff >= 0 ? 'var(--rise)' : 'var(--fall)';
+      const r = document.createElement('div');
+      r.className = 'trow';
+      r.innerHTML = `<span class="lab">${esc(name(x))}${sk.robust ? '<span class="star" aria-label="significant">★</span>' : ''}<small>${esc(t('type_' + x.type))}</small></span>
+        <div class="plot">${ticks.map((tk) => `<i class="${tk.v === 0 ? 'zero' : 'gridl'}" style="inset-inline-start:${pos(tk)}%"></i>`).join('')}
+          <i class="ci" style="background:${hue};inset-inline-start:${pos({ v: sk.diff_ci[0] })}%;inline-size:${pos({ v: sk.diff_ci[1] }) - pos({ v: sk.diff_ci[0] })}%"></i>
+          <i class="pt${sk.indicative ? '' : ' hollow'}" style="background:${hue};border-color:${hue};inset-inline-start:${pos({ v: sk.diff })}%"></i></div>
+        <span class="val">${fmtPP(sk.diff)}</span>`;
+      bindTip(r, trendTip(sk, n));
+      box.appendChild(r);
+    });
+    box.appendChild(axisRow(ticks, pos, t('ax_change')));
+    $('trend-change-legend').innerHTML = `<span><i class="dot-key" style="background:var(--rise)"></i>${esc(t('lg_rise'))}</span>
+      <span><i class="dot-key" style="background:var(--fall)"></i>${esc(t('lg_fall'))}</span>
+      <span><i class="dot-key hollow" style="border-color:var(--text-muted)"></i>${esc(t('lg_hollow'))}</span>
+      <span>${esc(t('lg_star'))}</span>`;
+
+    // B. three-period dumbbell
+    const pct = (sk, p) => (100 * sk.k[p]) / n[p];
+    const top = [...pool].sort((a, b) => Math.max(...T.periods.map((p) => pct(b, p.id))) - Math.max(...T.periods.map((p) => pct(a, p.id)))).slice(0, 12);
+    const mx = Math.min(100, Math.ceil(Math.max(20, ...top.flatMap((s) => T.periods.map((p) => pct(s, p.id)))) / 20) * 20);
+    const pos2 = (v) => (100 * v.v) / mx;
+    const ticks2 = [];
+    for (let v = 0; v <= mx; v += 20) ticks2.push({ v, lab: fmtPct(v) });
+    const db = $('trend-dumbbell');
+    db.innerHTML = '';
+    top.forEach((sk) => {
+      const x = BYID[sk.id];
+      const vals = T.periods.map((p) => pct(sk, p.id));
+      const lo = Math.min(...vals), hi = Math.max(...vals);
+      const r = document.createElement('div');
+      r.className = 'trow';
+      r.innerHTML = `<span class="lab">${esc(name(x))}<small>${esc(t('type_' + x.type))}</small></span>
+        <div class="plot">${ticks2.map((tk) => `<i class="gridl" style="inset-inline-start:${pos2(tk)}%"></i>`).join('')}
+          <i class="seg3" style="inset-inline-start:${pos2({ v: lo })}%;inline-size:${pos2({ v: hi }) - pos2({ v: lo })}%"></i>
+          ${vals.map((v, i) => `<i class="pt" style="background:var(--per-${i + 1});inset-inline-start:${pos2({ v })}%"></i>`).join('')}</div>
+        <span class="val">${fmtPct(vals[2])}</span>`;
+      bindTip(r, trendTip(sk, n));
+      db.appendChild(r);
+    });
+    db.appendChild(axisRow(ticks2, pos2, t('ax_share')));
+    $('trend-period-legend').innerHTML = T.periods.map((p, i) => `<span><i class="dot-key" style="background:var(--per-${i + 1})"></i>${esc(name(p))}</span>`).join('');
+
+    // C. intensity table
+    const num = (v) => v.toLocaleString(state.lang === 'fa' ? 'fa-IR' : 'en-US', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+    $('trend-intensity').innerHTML = `<thead><tr><th>${esc(t('int_type'))}</th>${T.periods.map((p) => `<th>${esc(name(p))}</th>`).join('')}</tr></thead><tbody>${
+      TYPES.map((ty) => `<tr><td>${esc(t('type_' + ty))}</td>${T.periods.map((p) => `<td>${num(R.intensity[ty][p.id])}</td>`).join('')}</tr>`).join('')}</tbody>`;
+
+    // D. full table view
+    $('trend-table').innerHTML = `<thead><tr><th>${esc(t('col_skill'))}</th><th>${esc(t('col_type'))}</th>${T.periods.map((p) => `<th>${esc(name(p))}</th>`).join('')}<th>${esc(t('col_change'))}</th><th>${esc(t('col_ci'))}</th><th>${esc(t('col_q'))}</th></tr></thead><tbody>${
+      pool.map((sk) => { const x = BYID[sk.id]; return `<tr><td>${esc(name(x))}${sk.robust ? ' ★' : ''}</td><td class="muted">${esc(t('type_' + x.type))}</td>${
+        T.periods.map((p) => `<td>${fmtPct(pct(sk, p.id))} <span class="muted">(${fmtInt(sk.k[p.id])})</span></td>`).join('')}<td>${fmtPP(sk.diff)}</td><td class="muted">${fmtPP(sk.diff_ci[0])} … ${fmtPP(sk.diff_ci[1])}</td><td class="muted">${sk.q}</td></tr>`; }).join('')}</tbody>`;
+  }
+
   function renderEsco() {
     const M = ['exact', 'close', 'broad', 'none'];
     const host = $('esco-bars');
@@ -368,7 +529,7 @@
   }
 
   function renderAll() {
-    applyStatic(); renderHero(); renderControls(); renderProfile(); renderCompare(); renderLookup(); renderCourses(); renderEsco();
+    applyStatic(); renderHero(); renderControls(); renderProfile(); renderCompare(); renderLookup(); renderCourses(); renderTrends(); renderEsco();
   }
 
   function initTheme() {
