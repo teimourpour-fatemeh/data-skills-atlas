@@ -30,7 +30,7 @@
       m_exact: 'یکسان', m_close: 'نزدیک', m_broad: 'کلی‌تر', m_none: 'بدون معادل',
       esco_of_mentions: 'از ذکرها', gap_esco: (l) => l ? `در ESCO: ${l}` : 'در ESCO: —',
       ads_n: (n) => `${fmtInt(n)} آگهی`,
-      footer: 'پژوهش و داده: فاطمه تیمورپور · داده‌ها در بهار ۱۴۰۴ برای گزارش تحلیلی مؤسسه توسعه، با مشاورهٔ علمی دکتر محمدمهدی پوربصیر، جمع‌آوری شد. · طبقه‌بندی ESCO © اتحادیه اروپا.',
+      footer: 'پژوهش و داده: فاطمه تیمورپور · داده‌ها در بهار ۱۴۰۴ برای گزارش تحلیلی مؤسسه توسعه، با مشاورهٔ علمی دکتر محمدمهدی پوربصیر، جمع‌آوری شد. · داده‌ها با مجوز CC BY 4.0 و کد با مجوز MIT؛ استفاده با ذکر منبع آزاد است. · طبقه‌بندی ESCO © اتحادیه اروپا.',
     },
     en: {
       theme: 'Dark / light', brand: 'Data Skills Atlas', nav_profile: 'Role profile', nav_compare: 'Compare roles', nav_lookup: 'Skill lookup',
@@ -59,7 +59,7 @@
       m_exact: 'Exact', m_close: 'Close', m_broad: 'Broader', m_none: 'No match',
       esco_of_mentions: 'of mentions', gap_esco: (l) => l ? `ESCO: ${l}` : 'ESCO: —',
       ads_n: (n) => `${fmtInt(n)} ads`,
-      footer: 'Research and data: Fatemeh Teimourpour · Data collected in spring 2025 (1404) for an analytical report by the Tose’e Institute, scientific advisor Dr. Mohammad Mahdi Pourbasir. · ESCO classification © European Union.',
+      footer: 'Research and data: Fatemeh Teimourpour · Data collected in spring 2025 (1404) for an analytical report by the Tose’e Institute, scientific advisor Dr. Mohammad Mahdi Pourbasir. · Data under CC BY 4.0, code under MIT — free to reuse with attribution. · ESCO classification © European Union.',
     },
   };
 

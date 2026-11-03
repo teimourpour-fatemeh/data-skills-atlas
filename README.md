@@ -9,3 +9,8 @@ This branch (`gh-pages`) holds the static site. It contains **aggregated counts 
 
 Research and data: Fatemeh Teimourpour. Data collected in spring 2025 (1404) for an analytical report by the Tose’e Institute, scientific advisor Dr. Mohammad Mahdi Pourbasir.
 ESCO classification © European Union.
+
+## Licence
+
+- Code: MIT — see [`LICENSE`](LICENSE).
+- Data and text: CC BY 4.0 — see [`LICENSE-DATA.md`](LICENSE-DATA.md), including a suggested citation.
