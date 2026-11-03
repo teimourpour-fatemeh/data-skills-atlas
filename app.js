@@ -5,14 +5,14 @@
   const I18N = {
     fa: {
       nav_trends: 'روند زمانی', h_trends: 'تغییر تقاضا در طول زمان',
-      s_trends: 'مقایسهٔ آگهی‌های منقضیِ نگه‌داشته‌شده در یک سایت (۱۳۹۸ تا ۱۴۰۳) با نمونهٔ اصلی ۱۴۰۴، برای تحلیلگر داده و هوش تجاری. این بخش اکتشافی است.',
+      s_trends: 'مقایسهٔ آگهی‌های منقضیِ نگه‌داشته‌شده در ای‌استخدام (۱۳۹۸ تا ۱۴۰۳) با نمونهٔ اصلی ۱۴۰۴، برای تحلیلگر داده و هوش تجاری. این بخش اکتشافی است.',
       h_change: 'بیشترین رشد و افت', s_change: 'تغییر سهم آگهی‌ها از ۱۳۹۸–۱۴۰۱ تا ۱۴۰۴، به واحد درصد. خط کنار هر نقطه بازهٔ اطمینان ۹۵٪ است. فقط مهارت‌هایی که دست‌کم در ۸ آگهی آمده‌اند.',
       h_periods: 'سهم آگهی‌ها در سه دوره', s_periods: 'درصد آگهی‌های هر دوره که مهارت را خواسته‌اند. ۱۲ مهارتی که در دست‌کم یکی از دوره‌ها بیشترین سهم را داشته‌اند.',
       h_intensity: 'میانگین تعداد مهارت در هر آگهی', s_intensity: 'آگهی‌های جدیدتر مهارت‌های انسانی بیشتری فهرست می‌کنند؛ بخشی از رشد مهارت‌های انسانی از همین طولانی‌تر شدن فهرست‌هاست.',
       trend_table: 'جدول کامل همهٔ مهارت‌های آزموده‌شده', h_limits: 'پیش از خواندن نمودارها',
       type_all: 'همه',
       lim: [
-        ['داده از یک سایت است.', 'آگهی‌های ۱۳۹۸ تا ۱۴۰۳ همه از یک سایت کاریابی‌اند؛ تفاوت دوره‌ها ممکن است بازتاب قالب آگهی یا مخاطبان همان سایت باشد، نه کل بازار.'],
+        ['منبع دوره‌ها یکی نیست.', 'آگهی‌های ۱۳۹۸ تا ۱۴۰۳ همه از ای‌استخدام‌اند، ولی نمونهٔ ۱۴۰۴ از سه سایت (جاب‌ویژن، جابینجا و ای‌استخدام) جمع شده است. بخشی از تفاوت دوره‌ها ممکن است تفاوت قالب آگهی و مخاطبان سایت‌ها باشد، نه تغییر بازار.'],
         ['نمونه تصادفی نیست.', 'فقط آگهی‌هایی مانده‌اند که سایت نگه داشته؛ نمی‌دانیم کدام آگهی‌ها حذف شده‌اند.'],
         ['تعداد آگهی کم است.', 'دورهٔ ۱۳۹۸–۱۴۰۱ برای هوش تجاری ۲۸ آگهی (فقط از ۱۴۰۰ و ۱۴۰۱) و برای تحلیلگر داده ۴۷ آگهی دارد. بازه‌های اطمینان پهن‌اند.'],
         ['نتیجه اکتشافی است.', 'ده‌ها مهارت هم‌زمان آزموده شده‌اند؛ بعضی تغییرها تصادفی‌اند. فقط موارد ★ پس از اصلاح آزمون‌های چندگانه (بنیامینی–هاکبرگ، q کمتر از ۰٫۱) باقی می‌مانند.'],
@@ -47,7 +47,7 @@
       h_esco_gap: 'پرتقاضاترین ابزارهایی که ESCO معادل دقیقشان را ندارد', h_method: 'روش کار و محدودیت‌ها',
       sample_main: 'بازه اصلی (۱۴۰۴)', sample_all: 'همه، با آگهی‌های منقضی',
       note_main: 'همه آگهی‌های منتشرشده در یک بازه یک‌ماهه در بهار ۱۴۰۴.',
-      note_all: 'به‌اضافهٔ آگهی‌های منقضی سال‌های ۱۳۹۳ تا ۱۴۰۳ که یک سایت نگه داشته بود. این آگهی‌ها نمونهٔ معرف نیستند.',
+      note_all: 'به‌اضافهٔ آگهی‌های منقضی سال‌های ۱۳۹۳ تا ۱۴۰۳ که ای‌استخدام نگه داشته بود. این آگهی‌ها نمونهٔ معرف نیستند.',
       stat_ads: 'آگهی کدگذاری‌شده', stat_roles: 'نقش داده‌محور', stat_skills: 'مهارت و ابزار یکدست‌شده', stat_mentions: 'بار ذکر مهارت',
       type_human: 'مهارت‌های انسانی', type_hard: 'مهارت‌های تخصصی', type_tool: 'ابزارها',
       small_n: (n) => `این نقش در این نمونه فقط ${fmtInt(n)} آگهی دارد؛ درصدها را با احتیاط بخوان.`,
@@ -61,14 +61,14 @@
     },
     en: {
       nav_trends: 'Over time', h_trends: 'How demand changed over time',
-      s_trends: 'Expired ads kept online by one site (2019–2025, 1398–1403 SH) compared with the 2025 main sample, for data analyst and business intelligence roles. This section is exploratory.',
+      s_trends: 'Expired ads kept online by e-Estekhdam (2019–2025, 1398–1403 SH) compared with the 2025 main sample, for data analyst and business intelligence roles. This section is exploratory.',
       h_change: 'Biggest rises and falls', s_change: 'Change in the share of ads from 1398–1401 (2019–22) to 1404 (2025), in percentage points. The line through each dot is its 95% confidence interval. Only skills that appear in at least 8 ads.',
       h_periods: 'Share of ads in three periods', s_periods: 'Share of each period’s ads asking for the skill. The 12 skills with the highest share in at least one period.',
       h_intensity: 'Average number of skills per ad', s_intensity: 'Newer ads list more human skills; part of the rise in human skills comes from longer lists.',
       trend_table: 'Full table of every skill tested', h_limits: 'Before reading these charts',
       type_all: 'All',
       lim: [
-        ['One site only.', 'All 2019–2025 (1398–1403) ads come from one job site; differences between periods may reflect that site’s ad template or audience rather than the whole market.'],
+        ['Different sources.', 'All 2019–2025 (1398–1403) ads come from e-Estekhdam, while the 2025 sample was collected from three sites (Jobvision, Jobinja and e-Estekhdam). Part of the difference between periods may reflect the sites’ ad templates and audiences rather than a change in the market.'],
         ['Not a random sample.', 'Only ads the site kept online survive; we do not know which ads were removed.'],
         ['Few ads.', 'The 1398–1401 (2019–22) period has 28 BI ads (only from 1400–1401) and 47 data-analyst ads. Confidence intervals are wide.'],
         ['Exploratory.', 'Dozens of skills are tested at once, so some changes are chance. Only ★ items survive a multiple-testing correction (Benjamini–Hochberg, q < 0.1).'],
@@ -103,7 +103,7 @@
       h_esco_gap: 'Most-requested tools with no exact ESCO match', h_method: 'Method and limitations',
       sample_main: 'Main window (2025)', sample_all: 'All, incl. expired ads',
       note_main: 'Every ad published during one month in spring 2025 (1404).',
-      note_all: 'Adds expired ads from 2014–2024 (1393–1403) that one site kept online. These are not a representative sample.',
+      note_all: 'Adds expired ads from 2014–2024 (1393–1403) that e-Estekhdam kept online. These are not a representative sample.',
       stat_ads: 'coded ads', stat_roles: 'data-driven roles', stat_skills: 'canonical skills and tools', stat_mentions: 'skill mentions',
       type_human: 'Human skills', type_hard: 'Specialist skills', type_tool: 'Tools',
       small_n: (n) => `This role has only ${fmtInt(n)} ads in this sample; read the percentages with caution.`,
@@ -120,8 +120,8 @@
   const METHOD = {
     fa: `
       <h3>داده</h3>
-      <p>آگهی‌های استخدام پنج نقش (بازاریابی داده‌محور، هوش تجاری، تحلیلگر داده، علم داده و تحلیلگر مالی) از سایت‌های کاریابی ایرانی، در یک بازهٔ ثابت یک‌ماهه در بهار ۱۴۰۴ (عمدتاً اردیبهشت و خرداد) جمع شد. همهٔ آگهی‌های موجود در آن بازه برداشته شد؛ پس تفاوت تعداد آگهی بین نقش‌ها، تفاوت واقعی حجم تقاضاست.</p>
-      <p>یک سایت آگهی‌های منقضی سال‌های قبل را هم نگه داشته بود. این آگهی‌ها جدا علامت خورده‌اند و فقط با گزینهٔ «همه» نمایش داده می‌شوند؛ چون از یک سایت‌اند، نمونهٔ معرف آن سال‌ها نیستند.</p>
+      <p>آگهی‌های استخدام پنج نقش (بازاریابی داده‌محور، هوش تجاری، تحلیلگر داده، علم داده و تحلیلگر مالی) از سه سایت کاریابی جاب‌ویژن، جابینجا و ای‌استخدام، در یک بازهٔ ثابت یک‌ماهه در بهار ۱۴۰۴ (عمدتاً اردیبهشت و خرداد) جمع شد. همهٔ آگهی‌های موجود در آن بازه برداشته شد؛ پس تفاوت تعداد آگهی بین نقش‌ها، تفاوت واقعی حجم تقاضاست.</p>
+      <p>ای‌استخدام آگهی‌های منقضی سال‌های قبل را هم نگه داشته بود (دو سایت دیگر آن‌ها را نشان نمی‌دادند). این آگهی‌ها جدا علامت خورده‌اند و فقط با گزینهٔ «همه» نمایش داده می‌شوند؛ چون از یک سایت‌اند، نمونهٔ معرف آن سال‌ها نیستند.</p>
       <h3>کدگذاری و دسته‌بندی</h3>
       <p>هر آگهی برای مهارت‌های نرم، ویژگی‌های رفتاری، مهارت‌های تخصصی و ابزارها کدگذاری شد (با کمک هوش مصنوعی). سپس نام‌های گوناگون یکدست شدند (مثلاً «Excel»، «Microsoft Excel» و «اکسل پیشرفته») و یک دسته‌بندی مشترک برای همهٔ نقش‌ها ساخته شد: ۴۴ مهارت انسانی، ۷۸ مهارت تخصصی و ۱۳۶ ابزار. یکدست‌سازی با قاعده انجام و با نمونه‌گیری تصادفی بررسی شده است.</p>
       <h3>دوره‌ها</h3>
@@ -132,15 +132,15 @@
       <p>همهٔ درصدها «سهم آگهی‌هایی است که دست‌کم یک بار آن مهارت را خواسته‌اند». یک آگهی می‌تواند چند مهارت بخواهد، پس جمع درصدها ۱۰۰ نمی‌شود.</p>
       <h3>محدودیت‌ها</h3>
       <ul>
-        <li>نمونهٔ اصلی یک برش زمانی است. بخش «تغییر تقاضا در طول زمان» بر آگهی‌های منقضیِ یک سایت تکیه دارد و فقط اکتشافی است.</li>
+        <li>نمونهٔ اصلی یک برش زمانی است. بخش «تغییر تقاضا در طول زمان» بر آگهی‌های منقضیِ ای‌استخدام تکیه دارد و منبع آن با نمونهٔ اصلی یکی نیست و فقط اکتشافی است.</li>
         <li>نمونهٔ تحلیلگر مالی در بازهٔ اصلی کوچک است (۳۱ آگهی).</li>
         <li>آگهی بیان خواستهٔ کارفرماست، نه تصویر کامل شغل؛ و سطح تسلط در بیشتر آگهی‌ها گفته نشده است.</li>
         <li>اعتبارسنجی انسانیِ کدگذاری روی یک زیرنمونه هنوز در جریان است.</li>
       </ul>`,
     en: `
       <h3>Data</h3>
-      <p>Job ads for five roles (data-driven marketing, business intelligence, data analyst, data science and financial analyst) were collected from Iranian job sites during a fixed one-month window in spring 2025 (1404, mainly Ordibehesht–Khordad). Every ad available in the window was taken, so differences in the number of ads between roles reflect real differences in demand.</p>
-      <p>One site also kept expired ads from earlier years online. These are flagged separately and shown only under “All”; because they come from a single site they are not a representative sample of those years.</p>
+      <p>Job ads for five roles (data-driven marketing, business intelligence, data analyst, data science and financial analyst) were collected from three Iranian job sites (Jobvision, Jobinja and e-Estekhdam) during a fixed one-month window in spring 2025 (1404, mainly Ordibehesht–Khordad). Every ad available in the window was taken, so differences in the number of ads between roles reflect real differences in demand.</p>
+      <p>e-Estekhdam also kept expired ads from earlier years online (the other two sites did not show them). These are flagged separately and shown only under “All”; because they come from a single site they are not a representative sample of those years.</p>
       <h3>Coding and taxonomy</h3>
       <p>Each ad was coded, with AI assistance, for soft skills, behavioural traits, specialist skills and tools. Variant names were then merged (e.g. “Excel”, “Microsoft Excel”, “advanced Excel”) into one shared taxonomy across roles: 44 human skills, 78 specialist skills and 136 tools. Canonicalisation is rule-based and was checked on random samples.</p>
       <h3>Courses</h3>
@@ -151,7 +151,7 @@
       <p>Every percentage is the share of ads that ask for the skill at least once. An ad can ask for many skills, so percentages do not add up to 100.</p>
       <h3>Limitations</h3>
       <ul>
-        <li>The main sample is a single cross-section. The “over time” section relies on expired ads from one site and is exploratory only.</li>
+        <li>The main sample is a single cross-section. The “over time” section relies on expired ads from e-Estekhdam, a different source mix from the main sample, and is exploratory only.</li>
         <li>The financial analyst main sample is small (31 ads).</li>
         <li>Ads state what employers ask for, not the whole job; proficiency level is not stated in most ads.</li>
         <li>Human validation of the coding on a subsample is still in progress.</li>
