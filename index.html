@@ -20,6 +20,7 @@
       <a href="#compare" data-i18n="nav_compare">مقایسه نقش‌ها</a>
       <a href="#lookup" data-i18n="nav_lookup">جستجوی مهارت</a>
       <a href="#courses" data-i18n="nav_courses">دوره‌ها و بازار</a>
+      <a href="#trends" data-i18n="nav_trends">روند زمانی</a>
       <a href="#esco" data-i18n="nav_esco">ESCO</a>
       <a href="#method" data-i18n="nav_method">روش کار</a>
     </nav>
@@ -104,6 +105,46 @@
       </div>
     </div>
     <p class="note" data-i18n="courses_note">توجه: فقط سرفصل منتشرشده در سایت مؤسسه بررسی شده است. نبودن یک مهارت در سرفصل عمومی لزوماً به این معنا نیست که در کلاس تدریس نمی‌شود.</p>
+  </section>
+
+  <section id="trends" class="block">
+    <h2 data-i18n="h_trends">تغییر تقاضا در طول زمان</h2>
+    <p class="sub" data-i18n="s_trends"></p>
+    <div class="trend-controls">
+      <div class="seg" id="trend-role-seg"></div>
+      <div class="seg" id="trend-type-seg"></div>
+    </div>
+    <div class="grid-trend">
+      <div class="trend-main">
+        <div class="period-row" id="trend-periods"></div>
+        <p class="warn" id="trend-small" hidden></p>
+        <div class="card">
+          <h3 data-i18n="h_change">بیشترین رشد و افت</h3>
+          <p class="card-sub" data-i18n="s_change"></p>
+          <div id="trend-change"></div>
+          <div class="legend" id="trend-change-legend"></div>
+        </div>
+        <div class="card">
+          <h3 data-i18n="h_periods">سهم آگهی‌ها در سه دوره</h3>
+          <p class="card-sub" data-i18n="s_periods"></p>
+          <div id="trend-dumbbell"></div>
+          <div class="legend" id="trend-period-legend"></div>
+        </div>
+        <div class="card">
+          <h3 data-i18n="h_intensity">میانگین تعداد مهارت در هر آگهی</h3>
+          <p class="card-sub" data-i18n="s_intensity"></p>
+          <div class="tbl-wrap"><table class="tbl" id="trend-intensity"></table></div>
+        </div>
+        <details class="card table-view">
+          <summary data-i18n="trend_table">جدول کامل همهٔ مهارت‌های آزموده‌شده</summary>
+          <div class="tbl-wrap"><table class="tbl" id="trend-table"></table></div>
+        </details>
+      </div>
+      <aside class="card limits" aria-labelledby="limits-h">
+        <h3 id="limits-h" data-i18n="h_limits">پیش از خواندن نمودارها</h3>
+        <ul id="trend-limits"></ul>
+      </aside>
+    </div>
   </section>
 
   <section id="esco" class="block">
